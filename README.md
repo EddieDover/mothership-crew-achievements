@@ -108,7 +108,7 @@ Players can view their earned achievements by:
 
 ![achievement_roll_request](https://github.com/user-attachments/assets/38986d6d-4095-4dcc-bceb-a5348ae675b3)
 
-EEE Roll Result
+### Roll Result
 
 ![achievement_roll](https://github.com/user-attachments/assets/5acfaec4-12b0-4c14-b804-89dbb205e89c)
 
