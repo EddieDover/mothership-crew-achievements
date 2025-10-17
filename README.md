@@ -23,7 +23,7 @@ A FoundryVTT module for the Mothership RPG system that adds a crew achievements 
 
 1. In Foundry VTT, go to the Add-on Modules tab
 2. Click "Install Module"
-3. Search for "Mothership Crew Achievements" or paste the manifest URL
+3. <s>Search for "Mothership Crew Achievements"</s> (coming soon!) or paste the manifest URL
 4. Click Install
 
 ### Manifest URL
@@ -115,7 +115,6 @@ Players can view their earned achievements by:
 ### Achievement Bestow
 
 ![achievement_bestow](https://github.com/user-attachments/assets/b6343ae5-9138-4be1-91b3-2f6d994da543)
-
 
 ## Support
 
