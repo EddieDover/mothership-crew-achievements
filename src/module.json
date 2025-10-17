@@ -1,0 +1,66 @@
+{
+  "id": "mothership-crew-achievements",
+  "title": "Mothership Crew Achievements",
+  "description": "Adds a crew achievements system to Mothership characters. Allows the GM to create and award achievements with descriptions, icons, and effects that integrate with the Mothership system.",
+  "url": "https://github.com/EddieDover/mothership-crew-achievements",
+  "bugs": "https://github.com/EddieDover/mothership-crew-achievements/issues",
+  "changelog": "https://github.com/EddieDover/mothership-crew-achievements/releases",
+  "manifest": "https://github.com/EddieDover/mothership-crew-achievements/releases/latest/download/module.json",
+  "download": "https://github.com/EddieDover/mothership-crew-achievements/releases/latest/download/module.zip",
+  "license": "https://github.com/EddieDover/mothership-crew-achievements/raw/main/LICENSE",
+  "readme": "https://github.com/EddieDover/mothership-crew-achievements/raw/main/README.md",
+  "flags": {
+    "allowBugReporter": true
+  },
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    },
+    {
+      "lang": "es",
+      "name": "Spanish",
+      "path": "lang/es.json"
+    }
+  ],
+  "version": "1.0.0",
+  "compatibility": {
+    "minimum": "13",
+    "verified": "13"
+  },
+  "authors": [
+    {
+      "name": "Eddie Dover",
+      "email": "ed@eddiedover.dev",
+      "discord": "EddieDover",
+      "flags": {}
+    }
+  ],
+  "esmodules": ["scripts/crew-achievements.js"],
+  "styles": ["styles/crew-achievements.css"],
+  "packs": [],
+  "relationships": {
+    "systems": [
+      {
+        "id": "mosh",
+        "type": "system",
+        "compatibility": {
+          "minimum": "0.6.0",
+          "verified": "0.6.0"
+        }
+      }
+    ]
+  },
+  "documentTypes": {
+    "Item": {
+      "achievement": {
+        "description": "",
+        "filePathFields": {
+          "img": ["IMAGE"]
+        },
+        "effects": []
+      }
+    }
+  }
+}

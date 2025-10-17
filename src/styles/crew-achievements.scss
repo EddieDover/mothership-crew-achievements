@@ -1,0 +1,614 @@
+// Scoped styles for Mothership Crew Achievements module
+
+// Achievement Item Sheet Styles
+.item-form.mosh-achievement {
+  font-family: "Roboto", sans-serif;
+
+  .sheet-header {
+    flex: 0 0 auto;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+
+    .header {
+      display: grid;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .sbt-profile {
+      width: 75px;
+      height: 75px;
+      object-fit: cover;
+      border: 2px solid #bbb;
+    }
+
+    .headerinputtext {
+      font-size: 0.9rem;
+      color: #666;
+      margin-bottom: 3px;
+    }
+
+    .headerinputfield.charname {
+      input.noborder {
+        width: 100%;
+        font-size: 1.2rem;
+        font-weight: bold;
+        border: none;
+        background: transparent;
+        padding: 5px;
+        border-bottom: 2px solid #ccc;
+
+        &:focus {
+          outline: none;
+          border-bottom-color: #000;
+        }
+      }
+    }
+  }
+
+  .sheet-tabs {
+    height: 40px;
+    border-top: 1px solid #aaa;
+    border-bottom: 1px solid #aaa;
+    display: flex;
+    gap: 20px;
+    padding: 0 10px;
+
+    .item {
+      line-height: 40px;
+      font-weight: bold;
+      cursor: pointer;
+      text-decoration: none;
+      color: #000;
+
+      &.active {
+        text-decoration: underline;
+        text-shadow: none;
+        color: white;
+      }
+
+      &:hover {
+        text-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+      }
+    }
+  }
+
+  .sheet-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 10px;
+
+    .tab {
+      display: none;
+
+      &.active {
+        display: block;
+      }
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+
+      label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+        color: #333;
+
+        &.hint {
+          font-weight: normal;
+          font-style: italic;
+          color: #666;
+        }
+      }
+
+      input[type="text"],
+      textarea,
+      select {
+        width: 100%;
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        font-family: inherit;
+
+        &:focus {
+          outline: none;
+          border-color: #000;
+        }
+      }
+
+      textarea {
+        min-height: 100px;
+        resize: vertical;
+      }
+    }
+
+    .effects-list {
+      margin-bottom: 10px;
+
+      .effect-item {
+        display: grid;
+        grid-template-columns: 140px 1fr auto;
+        gap: 10px;
+        align-items: center;
+        margin-bottom: 8px;
+        padding: 8px;
+        background: #f5f5f5;
+        border-radius: 3px;
+
+        .effect-type {
+          width: 100%;
+        }
+
+        .effect-description {
+          width: 100%;
+        }
+
+        .effect-delete {
+          color: #c44;
+          cursor: pointer;
+          padding: 5px;
+          display: inline-block;
+          text-decoration: none;
+
+          &:hover {
+            color: #f44;
+          }
+
+          i {
+            pointer-events: none;
+          }
+        }
+      }
+
+      .hint {
+        font-style: italic;
+        color: #666;
+        padding: 10px;
+        text-align: center;
+      }
+    }
+
+    button.add-effect {
+      cursor: pointer;
+      padding: 8px 15px;
+      background: #111;
+      color: white;
+      border: 2px solid #888;
+      border-radius: 3px;
+      font-weight: bold;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+
+      &:hover {
+        background: #333;
+        border-color: #000;
+      }
+    }
+  }
+}
+
+.mosh .achievements-tab {
+  background: #111;
+  color: white;
+  padding: 1rem;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.mosh .crew-achievements-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 300px;
+  transition: all 0.2s;
+
+  &.drag-over {
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px dashed #ffd700;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+  }
+}
+
+.mosh .achievements-header {
+  padding: 1rem;
+  background: #000;
+  border: 2px solid white;
+  border-radius: 0.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+
+  h2 {
+    margin: 0;
+    color: white;
+    font-family: "Roboto", sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+}
+
+// Achievement Controls
+.mosh .achievement-controls {
+  margin-bottom: 1.5rem;
+  text-align: center;
+
+  .create-achievement-btn {
+    cursor: pointer;
+    padding: 0.75rem 1.5rem;
+    background: #111;
+    color: white;
+    border: 2px solid white;
+    border-radius: 0.3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    &:hover {
+      background: #202020;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+      text-shadow: 0 0 10px white;
+    }
+
+    i {
+      font-size: 1rem;
+    }
+  }
+}
+
+// Achievements Grid
+.mosh .achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.mosh .achievement-card {
+  background: #000;
+  border: 2px solid white;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  display: flex;
+  gap: 1rem;
+  transition: all 0.2s;
+  position: relative;
+
+  &:hover {
+    background: #1a1a1a;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+  }
+}
+
+.mosh .achievement-icon {
+  flex-shrink: 0;
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #1a1a1a;
+  border: 2px solid #fff;
+  border-radius: 0.3rem;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  i {
+    font-size: 2rem;
+    color: #ffd700;
+  }
+}
+
+.mosh .achievement-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.mosh .achievement-name {
+  margin: 0;
+  color: #ffd700;
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+
+.mosh .achievement-description {
+  margin: 0;
+  color: #ddd;
+  font-style: italic;
+  font-size: 0.95rem;
+}
+
+.mosh .achievement-effects {
+  margin-top: 0.5rem;
+
+  strong {
+    color: white;
+    font-size: 0.9rem;
+  }
+
+  ul {
+    margin: 0.25rem 0 0 0;
+    padding-left: 1.25rem;
+    list-style: none;
+  }
+
+  li {
+    font-size: 0.85rem;
+    margin: 0.25rem 0;
+    padding-left: 1rem;
+    position: relative;
+
+    &::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+    }
+
+    &.positive-effect {
+      color: #4ade80;
+
+      &::before {
+        content: "✓";
+      }
+    }
+
+    &.negative-effect {
+      color: #f87171;
+
+      &::before {
+        content: "✗";
+      }
+    }
+
+    &.custom-effect {
+      color: #ffffff;
+
+      &::before {
+        content: "•";
+      }
+    }
+  }
+}
+
+.mosh .achievement-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  justify-content: center;
+  align-items: center;
+  margin-left: 0.5rem;
+}
+
+.mosh {
+  .edit-achievement-btn,
+  .award-achievement-btn,
+  .delete-achievement-btn {
+    cursor: pointer;
+    padding: 0.5rem;
+    background: #111;
+    color: white;
+    border: 2px solid white;
+    border-radius: 0.3rem;
+    font-weight: bold;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 2.5rem;
+    min-height: 2.5rem;
+
+    &:hover {
+      background: #202020;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    }
+
+    i {
+      font-size: 1rem;
+    }
+  }
+
+  .edit-achievement-btn {
+    border-color: #888;
+
+    &:hover {
+      border-color: white;
+    }
+  }
+
+  .award-achievement-btn {
+    border-color: #4ade80;
+    color: #4ade80;
+
+    &:hover {
+      border-color: #22c55e;
+      color: white;
+      box-shadow: 0 0 10px rgba(74, 222, 128, 0.5);
+    }
+  }
+
+  .delete-achievement-btn {
+    border-color: #c44;
+    color: #faa;
+
+    &:hover {
+      border-color: #f44;
+      color: white;
+      box-shadow: 0 0 10px rgba(255, 68, 68, 0.5);
+    }
+  }
+}
+
+.mosh .achievement-viewer-empty {
+  text-align: center;
+  padding: 3rem;
+  background: #000;
+  border: 2px solid #333;
+  border-radius: 0.5rem;
+
+  p {
+    color: #ccc;
+    font-size: 1.1rem;
+    margin: 0.5rem 0;
+  }
+}
+
+.mosh .achievements-empty {
+  text-align: center;
+  padding: 3rem;
+  background: #000;
+  border: 2px dashed #555;
+  border-radius: 0.5rem;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  p {
+    color: #ccc;
+    font-size: 1.1rem;
+    margin: 0.5rem 0;
+  }
+}
+
+// Make sure the tab is hidden by default
+.mosh .tab.achievements-tab {
+  &:not(.active) {
+    display: none;
+  }
+
+  &.active {
+    display: block;
+  }
+}
+
+// Achievement Viewer Window - scoped separately as it's a separate window
+.crew-achievement-viewer {
+  background: #111;
+
+  .window-content {
+    background: #111;
+    padding: 1rem;
+    overflow-y: auto;
+  }
+}
+
+.achievement-viewer-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: #111;
+  color: white;
+  gap: 1rem;
+}
+
+.mosh-achievement {
+  .sheet-tabs {
+    a {
+      color: white;
+    }
+    a.active {
+      text-decoration: underline;
+      text-shadow: none;
+    }
+  }
+  .headerinputfield {
+    input {
+      color: black;
+    }
+  }
+  .effect-item {
+    display: flex;
+    padding-bottom: 0.5rem;
+    align-items: center;
+    gap: 5px;
+  }
+  .editor-content {
+    [style*="white-space:pre"] {
+      white-space: normal !important;
+    }
+  }
+}
+
+.achievement-card {
+  .view-achievement-btn {
+    color: white;
+  }
+}
+
+.achievement-notification {
+  background: #fff;
+  padding-bottom: 0.1rem;
+  width: 100%;
+  border: 2px solid #111;
+  border-radius: 0em 0em 0em 0em;
+  font-family: "Century Gothic", "Diadact Gothic", sans-serif;
+  .achievement-title-banner {
+    display: flex;
+    width: 100%;
+    padding-bottom: 2px;
+    .achievement-notification-title {
+      display: flex;
+      background: black;
+      color: white;
+      width: 100%;
+      text-transform: uppercase;
+      font-size: 1rem;
+      font-weight: bold;
+      white-space: nowrap;
+      align-items: center;
+      padding: 5px;
+      height: fit-content;
+    }
+    .achievement-notification-icon {
+      -webkit-box-flex: 0;
+      width: 50px;
+      height: 50px;
+      flex: 0 24px;
+      flex-shrink: 1;
+      flex-grow: 0;
+      border-radius: 0px 0px 0px 10px;
+    }
+  }
+  .achievement-content {
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+    .achievement-stamp-container {
+      width: 100%;
+      align-items: center;
+      display: flex;
+      .achievement-approved-stamp {
+        color: red;
+        border: 2px solid red;
+        padding: 2px 5px;
+        font-weight: bold;
+        font-size: 1.5rem;
+        display: inline-block;
+        margin-top: 10px;
+        transform: rotate(-5deg);
+        margin-bottom: 15px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+  }
+}

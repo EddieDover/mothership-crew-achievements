@@ -1,0 +1,34 @@
+<!-- // TODO: Wait for the System to catch up to modern day. -->
+<form class="{{cssClass}}" autocomplete="off" class="standard-form">
+  <header class="sheet-header">
+    <div
+      class="header grid"
+      style="grid-template-columns: 75px auto; width:100%;"
+    >
+      <!-- Image -->
+      <img
+        class="edit-avatar"
+        style="height: auto;"
+        src="{{item.img}}"
+        data-action="editImage"
+        data-edit="img"
+        title="{{item.name}}"
+      />
+
+      <!-- NAME -->
+      <div class="">
+        <div class="headerinputtext">{{localize "Mosh.Name"}}</div>
+        <div class="headerinputfield charname">
+          <input
+            name="name"
+            class="noborder"
+            type="text"
+            value="{{item.name}}"
+            placeholder="{{localize 'Mosh.Name'}}"
+          />
+        </div>
+      </div>
+
+    </div>
+  </header>
+</form>

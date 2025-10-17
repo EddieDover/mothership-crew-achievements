@@ -1,0 +1,6 @@
+dist/
+node_modules/
+coverage/
+mothership-crew-achievementss.zip
+styles/crew-achievements.css
+.foundrylocation

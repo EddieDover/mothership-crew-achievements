@@ -1,0 +1,132 @@
+    <section class="tab effects {{tab.cssClass}}" data-group="primary" data-tab="effects">
+      <div class="form-group">
+        <div class="effects-list">
+          {{#if system.effects}}
+            {{#each system.effects as |effect idx|}}
+              <div class="effect-item">
+                <select name="system.effects.{{@index}}.effectType" class="effect-subtype">
+                  <option value="statMod" {{#if (eq effect.effectType "statMod")}}selected{{/if}}>
+                    {{localize "UI.StatModifier"}}
+                  </option>
+                  <option value="skillMod" {{#if (eq effect.effectType "skillMod")}}selected{{/if}}>
+                    {{localize "UI.SkillModifier"}}
+                  </option>
+                  <option value="advantage" {{#if (eq effect.effectType "advantage")}}selected{{/if}}>
+                    {{localize "UI.Advantage"}}
+                  </option>
+                  <option value="disadvantage" {{#if (eq effect.effectType "disadvantage")}}selected{{/if}}>
+                    {{localize "UI.Disadvantage"}}
+                  </option>
+                  <option value="custom" {{#if (eq effect.effectType "custom")}}selected{{/if}}>
+                    {{localize "UI.CustomEffect"}}
+                  </option>
+                </select>
+
+                {{#if (eq effect.effectType "statMod")}}
+                  <select name="system.effects.{{@index}}.stat" class="effect-stat">
+                    <option value="">
+                      {{localize "UI.SelectStat"}}
+                    </option>
+                    {{#each @root.applicable_stats}}
+                      <option value="{{this.value}}" {{#if (eq this.value effect.stat)}}selected{{/if}}>
+                        {{localize this.label}}
+                      </option>
+                    {{/each}}
+                  </select>
+                  <input
+                    type="number"
+                    name="system.effects.{{@index}}.bonus"
+                    class="effect-bonus"
+                    value="{{effect.bonus}}"
+                    placeholder="{{localize 'UI.Bonus'}}"
+                  />
+                {{else if (eq effect.effectType "skillMod")}}
+                  <select name="system.effects.{{@index}}.skill" class="effect-skill">
+                    <option value="">
+                      {{localize "UI.SelectSkill"}}
+                    </option>
+                    {{#each @root.applicable_skills}}
+                      <option value="{{this.value}}" {{#if (eq this.value effect.skill)}}selected{{/if}}>
+                        {{localize this.label}}
+                      </option>
+                    {{/each}}
+                  </select>
+                  <input
+                    type="number"
+                    name="system.effects.{{@index}}.bonus"
+                    class="effect-bonus"
+                    value="{{effect.bonus}}"
+                    placeholder="{{localize 'UI.Bonus'}}"
+                  />
+                {{else if (eq effect.effectType "advantage")}}
+                  <select name="system.effects.{{@index}}.stat" class="effect-stat">
+                    <option value="">
+                      {{localize "UI.SelectStat"}}
+                    </option>
+                    {{#each @root.applicable_stats}}
+                      <option value="{{this.value}}" {{#if (eq this.value effect.stat)}}selected{{/if}}>
+                        {{localize this.label}}
+                      </option>
+                    {{/each}}
+                  </select>
+                  <span class="effect-label">or</span>
+                  <select name="system.effects.{{@index}}.skill" class="effect-skill">
+                    <option value="">
+                      {{localize "UI.SelectSkill"}}
+                    </option>
+                    {{#each @root.applicable_skills}}
+                      <option value="{{this.value}}" {{#if (eq this.value effect.skill)}}selected{{/if}}>
+                        {{localize this.label}}
+                      </option>
+                    {{/each}}
+                  </select>
+                {{else if (eq effect.effectType "disadvantage")}}
+                  <select name="system.effects.{{@index}}.stat" class="effect-stat">
+                    <option value="">
+                      {{localize "UI.SelectStat"}}
+                    </option>
+                    {{#each @root.applicable_stats}}
+                      <option value="{{this.value}}" {{#if (eq this.value effect.stat)}}selected{{/if}}>
+                        {{localize this.label}}
+                      </option>
+                    {{/each}}
+                  </select>
+                  <span class="effect-label">or</span>
+                  <select name="system.effects.{{@index}}.skill" class="effect-skill">
+                    <option value="">
+                      {{localize "UI.SelectSkill"}}
+                    </option>
+                    {{#each @root.applicable_skills}}
+                      <option value="{{this.value}}" {{#if (eq this.value effect.skill)}}selected{{/if}}>
+                        {{localize this.label}}
+                      </option>
+                    {{/each}}
+                  </select>
+                {{else if (eq effect.effectType "custom")}}
+                  <input
+                    type="text"
+                    name="system.effects.{{@index}}.customDescription"
+                    class="effect-custom-description"
+                    value="{{effect.customDescription}}"
+                    placeholder="{{localize 'UI.CustomEffectDescription'}}"
+                  />
+                {{/if}}
+                {{#if ../editable}}
+                  <a class="effect-delete" data-action="onDeleteEffect" data-index="{{@index}}" title="{{localize 'UI.DeleteEffect'}}">
+                    <i class="fas fa-trash"></i>
+                  </a>
+                {{/if}}
+              </div>
+            {{/each}}
+          {{else}}
+            <p class="hint">{{localize "UI.NoEffectsYet"}}</p>
+          {{/if}}
+        </div>
+        {{#if editable}}
+          <button data-action="onAddEffect" type="button" class="add-effect">
+            <i class="fas fa-plus"></i>
+            {{localize "UI.AddEffect"}}
+          </button>
+        {{/if}}
+      </div>
+    </section>
