@@ -90,15 +90,32 @@ Players can view their earned achievements by:
 
 ### Creation Prompt
 
+![creation_prompt](https://github.com/user-attachments/assets/e44d5b28-a7d2-4e83-bff8-5a40d9554870)
+
 ### Creation Description
+
+![creation_description](https://github.com/user-attachments/assets/48af02de-b748-4329-8e62-7f31f360c32b)
 
 ### Creation Effects
 
+![creation_effects](https://github.com/user-attachments/assets/606a4959-0ec0-4d87-84c1-9c05d52a3d0c)
+
 ### Character Sheet
+
+![character_sheet](https://github.com/user-attachments/assets/bde68f50-5621-4a20-9632-c0c51d11bd13)
 
 ### Roll Prompt
 
-### Roll Result
+![achievement_roll_request](https://github.com/user-attachments/assets/38986d6d-4095-4dcc-bceb-a5348ae675b3)
+
+EEE Roll Result
+
+![achievement_roll](https://github.com/user-attachments/assets/5acfaec4-12b0-4c14-b804-89dbb205e89c)
+
+### Achievement Bestow
+
+![achievement_bestow](https://github.com/user-attachments/assets/b6343ae5-9138-4be1-91b3-2f6d994da543)
+
 
 ## Support
 
