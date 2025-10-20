@@ -86,13 +86,27 @@ export class AchievementSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
         label: `Mosh.${capitalizeWord(key)}`,
       };
     });
-    const skillPacks = game.packs
+    const localizeSkill = game.i18n.localize("SKILL").toLowerCase();
+
+    // Get skill packs in localized language first
+    let skillPacks = game.packs
       .filter(
         (p) =>
           p.metadata.type === "Item" &&
-          p.metadata.label.toLowerCase().includes("skill")
+          p.metadata.label.toLowerCase().includes(localizeSkill)
       )
       .map((p) => p.metadata.id);
+
+    // Fallback to English if no localized skill packs found
+    if (skillPacks.length === 0) {
+      skillPacks = game.packs
+        .filter(
+          (p) =>
+            p.metadata.type === "Item" &&
+            p.metadata.name.toLowerCase().includes("skill")
+        )
+        .map((p) => p.metadata.id);
+    }
 
     this.v12SkillKeys = [];
     this.v12SkillValues = [];
