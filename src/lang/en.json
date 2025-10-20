@@ -1,5 +1,6 @@
 {
   "TYPES.Item.mothership-crew-achievements.achievement": "achievement",
+  "SKILL": "skill",
   "MODULE": {
     "Name": "Mothership Crew Achievements",
     "Initializing": "Mothership Crew Achievements | Initializing",

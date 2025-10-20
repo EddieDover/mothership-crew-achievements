@@ -1,6 +1,6 @@
 {
-  "TYPES.Item.mothership-crew-achievements.achievement": "Logro",
-
+  "TYPES.Item.mothership-crew-achievements.achievement": "logro",
+  "SKILL": "habilidad",
   "MODULE": {
     "Name": "Logros de la Tripulación de Mothership",
     "Initializing": "Logros de la Tripulación de Mothership | Inicializando",
@@ -27,7 +27,7 @@
   },
   "UI": {
     "CustomEffectDescription": "Descripción del efecto personalizado (para mostrar en los mensajes del chat)",
-    "NoEffectsYet": "No hay efectos aún.",
+    "NoEffectsYet": "Aún no hay efectos.",
     "AddEffect": "Agregar Efecto",
     "RemoveEffect": "Eliminar Efecto",
     "AchievementSheet": "Hoja de Logro",
@@ -41,12 +41,12 @@
     "ViewAchievement": "Ver Logro",
     "DeleteAchievement": "Eliminar Logro",
     "ConfirmDeleteAchievement": "¿Estás seguro de que quieres eliminar este logro de este personaje?",
-    "StatModifier": "Modificador de Estadística",
+    "StatModifier": "Modificador de Característica",
     "SkillModifier": "Modificador de Habilidad",
     "Advantage": "Ventaja",
     "Disadvantage": "Desventaja",
     "CustomEffect": "Efecto Personalizado",
-    "SelectStat": "Selecciona una Estadística",
+    "SelectStat": "Selecciona una Característica",
     "SelectSkill": "Selecciona una Habilidad",
     "Bonus": "+5, -5, etc.",
     "Tab": {

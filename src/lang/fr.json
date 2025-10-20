@@ -1,5 +1,6 @@
 {
   "TYPES.Item.mothership-crew-achievements.achievement": "accomplissement",
+  "SKILL": "compétence",
   "MODULE": {
     "Name": "Accomplissements d'Équipage Mothership",
     "Initializing": "Accomplissements d'Équipage Mothership | Initialisation",
