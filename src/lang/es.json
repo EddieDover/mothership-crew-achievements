@@ -1,57 +1,65 @@
 {
-  "TYPES.Item.mothership-crew-achievements.achievement": "Logro",
-
-  "MODULE": {
-    "Name": "Logros de la Tripulación de Mothership",
-    "Initializing": "Logros de la Tripulación de Mothership | Inicializando",
-    "Ready": "Logros de la Tripulación de Mothership | Listo"
-  },
-  "CHAT": {
-    "AchievementSystem": "Sistema de Logros",
-    "AchievementEffectsApplied": "Efectos de logros de {character}:",
-    "StatModEffect": "{bonus} a {stat}",
-    "SkillModEffect": "{bonus} a {skill}",
-    "Advantage": "Ventaja",
-    "AdvantageOnStat": "Ventaja en {stat}",
-    "AdvantageOnSkill": "Ventaja en {skill}",
-    "Disadvantage": "Desventaja",
-    "DisadvantageOnStat": "Desventaja en {stat}",
-    "DisadvantageOnSkill": "Desventaja en {skill}",
-    "AdvantageDisadvantageCanceled": "Ventaja y Desventaja se cancelan (tirada normal)"
-  },
-  "SETTINGS": {
-    "EnableRollAutomation": "Habilitar Automatización de Tiradas",
-    "EnableRollAutomationHint": "Cuando está habilitado, los logros modificarán automáticamente las tiradas (bonificaciones, ventaja, desventaja). Cuando está deshabilitado, los logros son solo cosméticos.",
-    "EnableAchievementMessages": "Habilitar Mensajes de Logros",
-    "EnableAchievementMessagesHint": "Cuando está habilitado, los efectos de los logros se mostrarán en los mensajes del chat."
-  },
-  "UI": {
-    "CustomEffectDescription": "Descripción del efecto personalizado (para mostrar en los mensajes del chat)",
-    "NoEffectsYet": "No hay efectos aún.",
-    "AddEffect": "Agregar Efecto",
-    "RemoveEffect": "Eliminar Efecto",
-    "AchievementSheet": "Hoja de Logro",
-    "AchievementsTab": "Logros",
-    "AchievementsHeader": "Logros",
-    "AchievementDescription": "Descripción",
-    "AchievementEffects": "Efectos",
-    "NoAchievements": "Aún no hay logros.",
-    "EarnSomeAchievements": "¡Completa misiones e impresiona al DJ para ganar logros!",
-    "DropAchievementsHere": "¡Crea objetos de logro y arrástralos aquí para otorgarlos!",
-    "ViewAchievement": "Ver Logro",
-    "DeleteAchievement": "Eliminar Logro",
-    "ConfirmDeleteAchievement": "¿Estás seguro de que quieres eliminar este logro de este personaje?",
-    "StatModifier": "Modificador de Estadística",
-    "SkillModifier": "Modificador de Habilidad",
-    "Advantage": "Ventaja",
-    "Disadvantage": "Desventaja",
-    "CustomEffect": "Efecto Personalizado",
-    "SelectStat": "Selecciona una Estadística",
-    "SelectSkill": "Selecciona una Habilidad",
-    "Bonus": "+5, -5, etc.",
-    "Tab": {
-      "description": "Descripción",
-      "effects": "Efectos"
+  "TYPES.Item.mothership-crew-achievements.achievement": "logro",
+  "mothership-crew-achievements": {
+    "SKILL": "habilidad",
+    "MODULE": {
+      "Name": "Logros de la Tripulación de Mothership",
+      "Initializing": "Logros de la Tripulación de Mothership | Inicializando",
+      "Ready": "Logros de la Tripulación de Mothership | Listo"
+    },
+    "CHAT": {
+      "AWARD": {
+        "CREWMEMBER": "MIEMBRO DE LA TRIPULACIÓN",
+        "ACHIEVEMENT": "LOGRO",
+        "REASON": "RAZÓN",
+        "APPROVED": "APROBADO"
+      },
+      "AchievementSystem": "Sistema de Logros",
+      "AchievementEffectsApplied": "Efectos de logros de {character}:",
+      "StatModEffect": "{bonus} a {stat}",
+      "SkillModEffect": "{bonus} a {skill}",
+      "Advantage": "Ventaja",
+      "AdvantageOnStat": "Ventaja en {stat}",
+      "AdvantageOnSkill": "Ventaja en {skill}",
+      "Disadvantage": "Desventaja",
+      "DisadvantageOnStat": "Desventaja en {stat}",
+      "DisadvantageOnSkill": "Desventaja en {skill}",
+      "AdvantageDisadvantageCanceled": "Ventaja y Desventaja se cancelan (tirada normal)"
+    },
+    "SETTINGS": {
+      "EnableRollAutomation": "Habilitar Automatización de Tiradas",
+      "EnableRollAutomationHint": "Cuando está habilitado, los logros modificarán automáticamente las tiradas (bonificaciones, ventaja, desventaja). Cuando está deshabilitado, los logros son solo cosméticos.",
+      "EnableAchievementMessages": "Habilitar Mensajes de Logros",
+      "EnableAchievementMessagesHint": "Cuando está habilitado, los efectos de los logros se mostrarán en los mensajes del chat."
+    },
+    "UI": {
+      "CustomEffectDescription": "Descripción del efecto personalizado (para mostrar en los mensajes del chat)",
+      "NoEffectsYet": "Aún no hay efectos.",
+      "AddEffect": "Agregar Efecto",
+      "RemoveEffect": "Eliminar Efecto",
+      "AchievementSheet": "Hoja de Logro",
+      "AchievementsTab": "Logros",
+      "AchievementsHeader": "Logros",
+      "AchievementDescription": "Descripción",
+      "AchievementEffects": "Efectos",
+      "NoAchievements": "Aún no hay logros.",
+      "EarnSomeAchievements": "¡Completa misiones e impresiona al DJ para ganar logros!",
+      "DropAchievementsHere": "¡Crea objetos de logro y arrástralos aquí para otorgarlos!",
+      "ViewAchievement": "Ver Logro",
+      "DeleteAchievement": "Eliminar Logro",
+      "ConfirmDeleteAchievement": "¿Estás seguro de que quieres eliminar este logro de este personaje?",
+      "StatModifier": "Modificador de Característica",
+      "SkillModifier": "Modificador de Habilidad",
+      "Advantage": "Ventaja",
+      "Disadvantage": "Desventaja",
+      "CustomEffect": "Efecto Personalizado",
+      "SelectStat": "Selecciona una Característica",
+      "SelectSkill": "Selecciona una Habilidad",
+      "Bonus": "+5, -5, etc.",
+      "Tab": {
+        "description": "Descripción",
+        "effects": "Efectos"
+      }
     }
   }
 }

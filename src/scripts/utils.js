@@ -103,47 +103,71 @@ export const getAdjustmentBySkillOrAttribute = (
 export const getEffectChatText = (effect) => {
   switch (effect.effectType) {
     case "statMod":
-      return game.i18n.format("CHAT.StatModEffect", {
-        bonus: effect.bonus > 0 ? `+${effect.bonus}` : effect.bonus,
-        stat: game.i18n.localize(
-          `Mosh.${effect.stat.charAt(0).toUpperCase() + effect.stat.slice(1)}`
-        ),
-      });
-    case "skillMod":
-      return game.i18n.format("CHAT.SkillModEffect", {
-        bonus: effect.bonus > 0 ? `+${effect.bonus}` : effect.bonus,
-        skill: effect.skill,
-      });
-    case "advantage":
-      if (effect.stat) {
-        return game.i18n.format("CHAT.AdvantageOnStat", {
+      return game.i18n.format(
+        "mothership-crew-achievements.CHAT.StatModEffect",
+        {
+          bonus: effect.bonus > 0 ? `+${effect.bonus}` : effect.bonus,
           stat: game.i18n.localize(
             `Mosh.${effect.stat.charAt(0).toUpperCase() + effect.stat.slice(1)}`
           ),
-        });
-      } else if (effect.skill) {
-        return game.i18n.format("CHAT.AdvantageOnSkill", {
+        }
+      );
+    case "skillMod":
+      return game.i18n.format(
+        "mothership-crew-achievements.CHAT.SkillModEffect",
+        {
+          bonus: effect.bonus > 0 ? `+${effect.bonus}` : effect.bonus,
           skill: effect.skill,
-        });
+        }
+      );
+    case "advantage":
+      if (effect.stat) {
+        return game.i18n.format(
+          "mothership-crew-achievements.CHAT.AdvantageOnStat",
+          {
+            stat: game.i18n.localize(
+              `Mosh.${effect.stat.charAt(0).toUpperCase() + effect.stat.slice(1)}`
+            ),
+          }
+        );
+      } else if (effect.skill) {
+        return game.i18n.format(
+          "mothership-crew-achievements.CHAT.AdvantageOnSkill",
+          {
+            skill: effect.skill,
+          }
+        );
       } else {
-        return game.i18n.localize("CHAT.Advantage");
+        return game.i18n.localize(
+          "mothership-crew-achievements.CHAT.Advantage"
+        );
       }
     case "disadvantage":
       if (effect.stat) {
-        return game.i18n.format("CHAT.DisadvantageOnStat", {
-          stat: game.i18n.localize(
-            `Mosh.${effect.stat.charAt(0).toUpperCase() + effect.stat.slice(1)}`
-          ),
-        });
+        return game.i18n.format(
+          "mothership-crew-achievements.CHAT.DisadvantageOnStat",
+          {
+            stat: game.i18n.localize(
+              `Mosh.${effect.stat.charAt(0).toUpperCase() + effect.stat.slice(1)}`
+            ),
+          }
+        );
       } else if (effect.skill) {
-        return game.i18n.format("CHAT.DisadvantageOnSkill", {
-          skill: effect.skill,
-        });
+        return game.i18n.format(
+          "mothership-crew-achievements.CHAT.DisadvantageOnSkill",
+          {
+            skill: effect.skill,
+          }
+        );
       } else {
-        return game.i18n.localize("CHAT.Disadvantage");
+        return game.i18n.localize(
+          "mothership-crew-achievements.CHAT.Disadvantage"
+        );
       }
     case "cancellation":
-      return game.i18n.localize("CHAT.AdvantageDisadvantageCanceled");
+      return game.i18n.localize(
+        "mothership-crew-achievements.CHAT.AdvantageDisadvantageCanceled"
+      );
   }
 };
 
@@ -179,13 +203,17 @@ export function sendAchievementEffectNotification(actorName, effects) {
     ChatMessage.create({
       content: `
         <div style="text-align: center; font-style: italic; color: #333; margin: 0.5em 0;">
-          <strong>${game.i18n.format("CHAT.AchievementEffectsApplied", { character: actorName })}</strong>
+          <strong>${game.i18n.format("mothership-crew-achievements.CHAT.AchievementEffectsApplied", { character: actorName })}</strong>
           <ul style="list-style: none; padding: 0; margin: 0.25em 0;">
             ${effectsList}
           </ul>
         </div>
       `,
-      speaker: { alias: game.i18n.localize("CHAT.AchievementSystem") },
+      speaker: {
+        alias: game.i18n.localize(
+          "mothership-crew-achievements.CHAT.AchievementSystem"
+        ),
+      },
       // whisper: [game.user.id],
     });
   }

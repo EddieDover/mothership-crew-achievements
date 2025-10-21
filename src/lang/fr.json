@@ -1,0 +1,65 @@
+{
+  "TYPES.Item.mothership-crew-achievements.achievement": "accomplissement",
+  "mothership-crew-achievements": {
+    "SKILL": "compétence",
+    "MODULE": {
+      "Name": "Accomplissements d'Équipage Mothership",
+      "Initializing": "Accomplissements d'Équipage Mothership | Initialisation",
+      "Ready": "Accomplissements d'Équipage Mothership | Prêt"
+    },
+    "SETTINGS": {
+      "EnableRollAutomation": "Activer l'Automatisation des Jets",
+      "EnableRollAutomationHint": "Lorsqu'activé, les accomplissements modifieront automatiquement les jets (bonus, avantage, désavantage). Lorsque désactivé, les accomplissements sont uniquement cosmétiques.",
+      "EnableAchievementMessages": "Activer les Messages d'Accomplissement",
+      "EnableAchievementMessagesHint": "Lorsqu'activé, les effets des accomplissements seront affichés dans les messages du chat."
+    },
+    "CHAT": {
+      "AWARD": {
+        "CREWMEMBER": "MEMBRE D'ÉQUIPAGE",
+        "ACHIEVEMENT": "ACCOMPLISSEMENT",
+        "REASON": "RAISON",
+        "APPROVED": "APPROUVÉ"
+      },
+      "AchievementSystem": "Système d'Accomplissements",
+      "AchievementEffectsApplied": "Effets des accomplissements de {character} :",
+      "StatModEffect": "{bonus} en {stat}",
+      "SkillModEffect": "{bonus} en {skill}",
+      "Advantage": "Avantage",
+      "AdvantageOnStat": "Avantage en {stat}",
+      "AdvantageOnSkill": "Avantage en {skill}",
+      "Disadvantage": "Désavantage",
+      "DisadvantageOnStat": "Désavantage en {stat}",
+      "DisadvantageOnSkill": "Désavantage en {skill}",
+      "AdvantageDisadvantageCanceled": "Avantage et Désavantage s'annulent (jet normal)"
+    },
+    "UI": {
+      "CustomEffectDescription": "Description de l'effet personnalisé (pour affichage dans les messages du chat)",
+      "NoEffectsYet": "Pas encore d'effets.",
+      "AddEffect": "Ajouter un Effet",
+      "RemoveEffect": "Retirer un Effet",
+      "AchievementSheet": "Fiche d'Accomplissement",
+      "AchievementsTab": "Accomplissements",
+      "AchievementsHeader": "Accomplissements",
+      "AchievementDescription": "Description",
+      "AchievementEffects": "Effets",
+      "NoAchievements": "Pas encore d'accomplissements.",
+      "EarnSomeAchievements": "Complétez des missions et impressionnez le MJ pour gagner des accomplissements !",
+      "DropAchievementsHere": "Créez des objets accomplissement et glissez-les ici pour les attribuer !",
+      "ViewAchievement": "Voir l'Accomplissement",
+      "DeleteAchievement": "Supprimer l'Accomplissement",
+      "ConfirmDeleteAchievement": "Êtes-vous sûr de vouloir retirer cet accomplissement de ce personnage ?",
+      "StatModifier": "Modificateur de Caractéristique",
+      "SkillModifier": "Modificateur de Compétence",
+      "Advantage": "Avantage",
+      "Disadvantage": "Désavantage",
+      "CustomEffect": "Effet Personnalisé",
+      "SelectStat": "Sélectionner une Caractéristique",
+      "SelectSkill": "Sélectionner une Compétence",
+      "Bonus": "+5, -5, etc.",
+      "Tab": {
+        "description": "Description",
+        "effects": "Effets"
+      }
+    }
+  }
+}

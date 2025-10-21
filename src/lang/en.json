@@ -1,56 +1,65 @@
 {
   "TYPES.Item.mothership-crew-achievements.achievement": "achievement",
-  "MODULE": {
-    "Name": "Mothership Crew Achievements",
-    "Initializing": "Mothership Crew Achievements | Initializing",
-    "Ready": "Mothership Crew Achievements | Ready"
-  },
-  "SETTINGS": {
-    "EnableRollAutomation": "Enable Roll Automation",
-    "EnableRollAutomationHint": "When enabled, achievements will automatically modify rolls (bonuses, advantage, disadvantage). When disabled, achievements are cosmetic only.",
-    "EnableAchievementMessages": "Enable Achievement Messages",
-    "EnableAchievementMessagesHint": "When enabled, achievement effects will be displayed in chat messages."
-  },
-  "CHAT": {
-    "AchievementSystem": "Achievement System",
-    "AchievementEffectsApplied": "{character}'s achievement effects:",
-    "StatModEffect": "{bonus} to {stat}",
-    "SkillModEffect": "{bonus} to {skill}",
-    "Advantage": "Advantage",
-    "AdvantageOnStat": "Advantage on {stat}",
-    "AdvantageOnSkill": "Advantage on {skill}",
-    "Disadvantage": "Disadvantage",
-    "DisadvantageOnStat": "Disadvantage on {stat}",
-    "DisadvantageOnSkill": "Disadvantage on {skill}",
-    "AdvantageDisadvantageCanceled": "Advantage and Disadvantage cancel out (normal roll)"
-  },
-  "UI": {
-    "CustomEffectDescription": "Custom effect description (for display in chat messages)",
-    "NoEffectsYet": "No effects yet.",
-    "AddEffect": "Add Effect",
-    "RemoveEffect": "Remove Effect",
-    "AchievementSheet": "Achievement Sheet",
-    "AchievementsTab": "Achievements",
-    "AchievementsHeader": "Achievements",
-    "AchievementDescription": "Description",
-    "AchievementEffects": "Effects",
-    "NoAchievements": "No achievements yet.",
-    "EarnSomeAchievements": "Complete missions and impress the GM to earn achievements!",
-    "DropAchievementsHere": "Create achievement items and drag them here to award them!",
-    "ViewAchievement": "View Achievement",
-    "DeleteAchievement": "Delete Achievement",
-    "ConfirmDeleteAchievement": "Are you sure you want to remove this achievement from this character?",
-    "StatModifier": "Stat Modifier",
-    "SkillModifier": "Skill Modifier",
-    "Advantage": "Advantage",
-    "Disadvantage": "Disadvantage",
-    "CustomEffect": "Custom Effect",
-    "SelectStat": "Select a Stat",
-    "SelectSkill": "Select a Skill",
-    "Bonus": "+5, -5, etc.",
-    "Tab": {
-      "description": "Description",
-      "effects": "Effects"
+  "mothership-crew-achievements": {
+    "SKILL": "skill",
+    "MODULE": {
+      "Name": "Mothership Crew Achievements",
+      "Initializing": "Mothership Crew Achievements | Initializing",
+      "Ready": "Mothership Crew Achievements | Ready"
+    },
+    "SETTINGS": {
+      "EnableRollAutomation": "Enable Roll Automation",
+      "EnableRollAutomationHint": "When enabled, achievements will automatically modify rolls (bonuses, advantage, disadvantage). When disabled, achievements are cosmetic only.",
+      "EnableAchievementMessages": "Enable Achievement Messages",
+      "EnableAchievementMessagesHint": "When enabled, achievement effects will be displayed in chat messages."
+    },
+    "CHAT": {
+      "AWARD": {
+        "CREWMEMBER": "CREWMEMBER",
+        "ACHIEVEMENT": "ACHIEVEMENT",
+        "REASON": "REASON",
+        "APPROVED": "APPROVED"
+      },
+      "AchievementSystem": "Achievement System",
+      "AchievementEffectsApplied": "{character}'s achievement effects:",
+      "StatModEffect": "{bonus} to {stat}",
+      "SkillModEffect": "{bonus} to {skill}",
+      "Advantage": "Advantage",
+      "AdvantageOnStat": "Advantage on {stat}",
+      "AdvantageOnSkill": "Advantage on {skill}",
+      "Disadvantage": "Disadvantage",
+      "DisadvantageOnStat": "Disadvantage on {stat}",
+      "DisadvantageOnSkill": "Disadvantage on {skill}",
+      "AdvantageDisadvantageCanceled": "Advantage and Disadvantage cancel out (normal roll)"
+    },
+    "UI": {
+      "CustomEffectDescription": "Custom effect description (for display in chat messages)",
+      "NoEffectsYet": "No effects yet.",
+      "AddEffect": "Add Effect",
+      "RemoveEffect": "Remove Effect",
+      "AchievementSheet": "Achievement Sheet",
+      "AchievementsTab": "Achievements",
+      "AchievementsHeader": "Achievements",
+      "AchievementDescription": "Description",
+      "AchievementEffects": "Effects",
+      "NoAchievements": "No achievements yet.",
+      "EarnSomeAchievements": "Complete missions and impress the GM to earn achievements!",
+      "DropAchievementsHere": "Create achievement items and drag them here to award them!",
+      "ViewAchievement": "View Achievement",
+      "DeleteAchievement": "Delete Achievement",
+      "ConfirmDeleteAchievement": "Are you sure you want to remove this achievement from this character?",
+      "StatModifier": "Stat Modifier",
+      "SkillModifier": "Skill Modifier",
+      "Advantage": "Advantage",
+      "Disadvantage": "Disadvantage",
+      "CustomEffect": "Custom Effect",
+      "SelectStat": "Select a Stat",
+      "SelectSkill": "Select a Skill",
+      "Bonus": "+5, -5, etc.",
+      "Tab": {
+        "description": "Description",
+        "effects": "Effects"
+      }
     }
   }
 }
