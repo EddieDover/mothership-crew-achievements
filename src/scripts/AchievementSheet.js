@@ -11,7 +11,7 @@ export class AchievementSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
       closeOnSubmit: false,
     },
     window: {
-      title: "UI.AchievementSheet",
+      title: "mothership-crew-achievements.UI.AchievementSheet",
       width: 520,
       height: 480,
     },
@@ -46,7 +46,7 @@ export class AchievementSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
   static TABS = {
     primary: {
       tabs: [{ id: "description" }, { id: "effects" }],
-      labelPrefix: "UI.Tab",
+      labelPrefix: "mothership-crew-achievements.UI.Tab",
       initial: "description",
     },
   };
@@ -86,7 +86,9 @@ export class AchievementSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
         label: `Mosh.${capitalizeWord(key)}`,
       };
     });
-    const localizeSkill = game.i18n.localize("SKILL").toLowerCase();
+    const localizeSkill = game.i18n
+      .localize("mothership-crew-achievements.SKILL")
+      .toLowerCase();
 
     // Get skill packs in localized language first
     let skillPacks = game.packs

@@ -13,6 +13,12 @@
     "EnableAchievementMessagesHint": "When enabled, achievement effects will be displayed in chat messages."
   },
   "CHAT": {
+    "AWARD": {
+      "CREWMEMBER": "CREWMEMBER",
+      "ACHIEVEMENT": "ACHIEVEMENT",
+      "REASON": "REASON",
+      "APPROVED": "APPROVED"
+    },
     "AchievementSystem": "Achievement System",
     "AchievementEffectsApplied": "{character}'s achievement effects:",
     "StatModEffect": "{bonus} to {stat}",

@@ -7,6 +7,12 @@
     "Ready": "Logros de la Tripulación de Mothership | Listo"
   },
   "CHAT": {
+    "AWARD": {
+      "CREWMEMBER": "MIEMBRO DE LA TRIPULACIÓN",
+      "ACHIEVEMENT": "LOGRO",
+      "REASON": "RAZÓN",
+      "APPROVED": "APROBADO"
+    },
     "AchievementSystem": "Sistema de Logros",
     "AchievementEffectsApplied": "Efectos de logros de {character}:",
     "StatModEffect": "{bonus} a {stat}",

@@ -52,7 +52,7 @@ Hooks.once("setup", () => {
 
 Hooks.once("init", async () => {
   console.log(
-    game.i18n.localize("MODULE.Initializing") ||
+    game.i18n.localize("mothership-crew-achievements.MODULE.Initializing") ||
       "Mothership Crew Achievements | Initializing"
   );
 
@@ -294,8 +294,12 @@ Hooks.once("init", async () => {
   });
   // Register module setting for roll automation
   game.settings.register(MODULE_ID, "enableRollAutomation", {
-    name: game.i18n.localize("SETTINGS.EnableRollAutomation"),
-    hint: game.i18n.localize("SETTINGS.EnableRollAutomationHint"),
+    name: game.i18n.localize(
+      "mothership-crew-achievements.SETTINGS.EnableRollAutomation"
+    ),
+    hint: game.i18n.localize(
+      "mothership-crew-achievements.SETTINGS.EnableRollAutomationHint"
+    ),
     scope: "world",
     config: true,
     type: Boolean,
@@ -305,8 +309,12 @@ Hooks.once("init", async () => {
 
   // Register module setting for achievement roll messages
   game.settings.register(MODULE_ID, "enableAchievementMessages", {
-    name: game.i18n.localize("SETTINGS.EnableAchievementMessages"),
-    hint: game.i18n.localize("SETTINGS.EnableAchievementMessagesHint"),
+    name: game.i18n.localize(
+      "mothership-crew-achievements.SETTINGS.EnableAchievementMessages"
+    ),
+    hint: game.i18n.localize(
+      "mothership-crew-achievements.SETTINGS.EnableAchievementMessagesHint"
+    ),
     scope: "world",
     config: true,
     type: Boolean,
@@ -331,7 +339,8 @@ Hooks.once("init", async () => {
 
 Hooks.once("ready", async () => {
   console.log(
-    game.i18n.localize("MODULE.Ready") || "Mothership Crew Achievements | Ready"
+    game.i18n.localize("mothership-crew-achievements.MODULE.Ready") ||
+      "Mothership Crew Achievements | Ready"
   );
 
   // Store active tabs for each actor sheet to restore after re-render
@@ -398,7 +407,7 @@ Hooks.on("renderMothershipActorSheet", (app, html) => {
   const achievementsTab = document.createElement("a");
   achievementsTab.className = "tab-select";
   achievementsTab.dataset.tab = "achievements";
-  achievementsTab.innerHTML = `${game.i18n.localize("UI.AchievementsTab") || "Achievements"}`;
+  achievementsTab.innerHTML = `${game.i18n.localize("mothership-crew-achievements.UI.AchievementsTab") || "Achievements"}`;
   tabsNav.appendChild(achievementsTab);
 
   // Find the tab content area
@@ -420,7 +429,7 @@ Hooks.on("renderMothershipActorSheet", (app, html) => {
   let content = `
       <div class="crew-achievements-container">
         <div class="achievements-header">
-          <h2>${game.i18n.localize("UI.AchievementsHeader") || "Crewmember Achievements"}</h2>
+          <h2>${game.i18n.localize("mothership-crew-achievements.UI.AchievementsHeader") || "Crewmember Achievements"}</h2>
         </div>
     `;
   if (achievementItems.length > 0) {
@@ -448,7 +457,7 @@ Hooks.on("renderMothershipActorSheet", (app, html) => {
       if (effects.length > 0) {
         content += `
             <div class="achievement-effects">
-              <strong>${game.i18n.localize("UI.AchievementEffects") || "Effects"}:</strong>
+              <strong>${game.i18n.localize("mothership-crew-achievements.UI.AchievementEffects") || "Effects"}:</strong>
               <ul>
           `;
         effects.forEach((effect) => {
@@ -549,10 +558,10 @@ Hooks.on("renderMothershipActorSheet", (app, html) => {
       if (game.user.isGM) {
         content += `
             <div class="achievement-actions">
-              <button class="view-achievement-btn" data-item-id="${achievement.id}" title="${game.i18n.localize("UI.ViewAchievement") || "View Achievement"}">
+              <button class="view-achievement-btn" data-item-id="${achievement.id}" title="${game.i18n.localize("mothership-crew-achievements.UI.ViewAchievement") || "View Achievement"}">
                 <i class="fas fa-eye"></i>
               </button>
-              <button class="delete-achievement-btn" data-item-id="${achievement.id}" title="${game.i18n.localize("UI.DeleteAchievement") || "Delete Achievement"}">
+              <button class="delete-achievement-btn" data-item-id="${achievement.id}" title="${game.i18n.localize("mothership-crew-achievements.UI.DeleteAchievement") || "Delete Achievement"}">
                 <i class="fas fa-trash"></i>
               </button>
             </div>
@@ -567,13 +576,13 @@ Hooks.on("renderMothershipActorSheet", (app, html) => {
   } else {
     content += `
         <div class="achievements-empty">
-          <p>${game.i18n.localize("UI.NoAchievements") || "No achievements yet."}</p>
+          <p>${game.i18n.localize("mothership-crew-achievements.UI.NoAchievements") || "No achievements yet."}</p>
       `;
 
     if (game.user.isGM) {
-      content += `<p>${game.i18n.localize("UI.DropAchievementsHere") || "Create achievement items and drag them here to award them!"}</p>`;
+      content += `<p>${game.i18n.localize("mothership-crew-achievements.UI.DropAchievementsHere") || "Create achievement items and drag them here to award them!"}</p>`;
     } else {
-      content += `<p>${game.i18n.localize("UI.EarnSomeAchievements") || "Complete missions and impress the GM to earn achievements!"}</p>`;
+      content += `<p>${game.i18n.localize("mothership-crew-achievements.UI.EarnSomeAchievements") || "Complete missions and impress the GM to earn achievements!"}</p>`;
     }
 
     content += `
@@ -615,8 +624,10 @@ Hooks.on("renderMothershipActorSheet", (app, html) => {
         const item = app.actor.items.get(itemId);
         if (item) {
           const confirm = await foundry.applications.api.DialogV2.confirm({
-            title: game.i18n.localize("UI.DeleteAchievement"),
-            content: `<p>${game.i18n.localize("UI.ConfirmDeleteAchievement") || "Are you sure you want to remove this achievement?"}</p>`,
+            title: game.i18n.localize(
+              "mothership-crew-achievements.UI.DeleteAchievement"
+            ),
+            content: `<p>${game.i18n.localize("mothership-crew-achievements.UI.ConfirmDeleteAchievement") || "Are you sure you want to remove this achievement?"}</p>`,
           });
           if (confirm) {
             // Track that we're on the achievements tab before deletion triggers a re-render
@@ -649,17 +660,17 @@ Hooks.on("createItem", (item) => {
             </div>
             <div class="achievement-content">
               <div class="achievement-content-line">
-                CREWMEMBER: <strong>${actor.name}</strong>
+                ${game.i18n.localize("mothership-crew-achievements.CHAT.AWARD.CREWMEMBER")}: <strong>${actor.name}</strong>
               </div>
               <div class="achievement-content-line">
-                ACHIEVEMENT: <strong>${item.name}</strong>
+                ${game.i18n.localize("mothership-crew-achievements.CHAT.AWARD.ACHIEVEMENT")}: <strong>${item.name}</strong>
               </div>
               <div class="achievement-content-line">
-                REASON: <strong>${item.system.description || "No description provided."}</strong>
+                ${game.i18n.localize("mothership-crew-achievements.CHAT.AWARD.REASON")}: <strong>${item.system.description || "No description provided."}</strong>
               </div>
               <div class="achievement-stamp-container">
                 <div class="achievement-approved-stamp">
-                  APPROVED
+                  ${game.i18n.localize("mothership-crew-achievements.CHAT.AWARD.APPROVED")}
                 </div>
               </div>
             </div>
