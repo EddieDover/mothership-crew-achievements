@@ -28,6 +28,7 @@ const resetAutomation = () => {
 const settleRollstring = (newRollString) => {
   const alreadyHasAdvantage = newRollString.includes("[+]");
   const alreadyHasDisadvantage = newRollString.includes("[-]");
+  const alreadyHasNumerics = newRollString.includes("1d100");
   if (alreadyHasAdvantage && givenDisadvantage) {
     newRollString = newRollString.replace("[+]", "");
   } else if (alreadyHasDisadvantage && givenAdvantage) {
@@ -36,6 +37,15 @@ const settleRollstring = (newRollString) => {
     newRollString = newRollString + " [+]";
   } else if (givenDisadvantage && !alreadyHasDisadvantage) {
     newRollString = newRollString + " [-]";
+  }
+  const currentlyHasAdvantage = newRollString.includes("[+]");
+  const currentlyHasDisadvantage = newRollString.includes("[-]");
+  // If we need to give advantage or disadvantage, but there's no valid roll add it.
+  // Adding it anyway will force a 'normal' roll, so we can't do that.
+  if (currentlyHasAdvantage || currentlyHasDisadvantage) {
+    if (!alreadyHasNumerics) {
+      newRollString = "1d100 " + newRollString;
+    }
   }
   return newRollString;
 };
@@ -206,7 +216,7 @@ Hooks.once("init", async () => {
         }
       }
 
-      newRollString = newRollString || "1d100";
+      newRollString = newRollString || "";
 
       newRollString = settleRollstring(newRollString);
     }
@@ -647,8 +657,11 @@ Hooks.on("renderMothershipActorSheet", (app, html) => {
 });
 
 // Add chat message when an achievement is added to a character
-Hooks.on("createItem", (item) => {
+Hooks.on("createItem", (item, options, userId) => {
   if (item.type === ACHIEVEMENT_TYPE_ID && item.parent?.type === "character") {
+    // This prevents duplicate messages from each connected client
+    if (game.user.id !== userId) return;
+
     const actor = item.parent;
 
     ChatMessage.create({
