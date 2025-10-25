@@ -647,8 +647,11 @@ Hooks.on("renderMothershipActorSheet", (app, html) => {
 });
 
 // Add chat message when an achievement is added to a character
-Hooks.on("createItem", (item) => {
+Hooks.on("createItem", (item, options, userId) => {
   if (item.type === ACHIEVEMENT_TYPE_ID && item.parent?.type === "character") {
+    // This prevents duplicate messages from each connected client
+    if (game.user.id !== userId) return;
+
     const actor = item.parent;
 
     ChatMessage.create({
