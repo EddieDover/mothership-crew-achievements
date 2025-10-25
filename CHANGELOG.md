@@ -1,4 +1,11 @@
 
+## [1.1.2](https://github.com/EddieDover/mothership-crew-achievements/compare/v1.1.1...v1.1.2) (2025-10-25)
+
+
+### Bug Fixes
+
+* properly allows second roll prompting if first stage is declined ([a55479a](https://github.com/EddieDover/mothership-crew-achievements/commit/a55479a4f829b60f95947e611bc8d9132cf44b4f))
+
 ## [1.1.1](https://github.com/EddieDover/mothership-crew-achievements/compare/v1.1.0...v1.1.1) (2025-10-25)
 
 
