@@ -80,7 +80,25 @@ Hooks.once("init", async () => {
       result[1]
     );
 
-    if (newRollEffects?.length > 0 && wantAutomation == 0) {
+    // If there are no effects for this skill, return original result
+    if (newRollEffects.length === 0) {
+      return result;
+    }
+
+    // If we haven't asked yet (wantAutomation == 0), this might be a new roll
+    // Reset from any previous -1 state since this is a fresh attempt
+    if (wantAutomation === -1 && rollEffects.length === 0) {
+      // Previous roll was cancelled and no effects accumulated yet - reset for new roll
+      resetAutomation();
+    }
+
+    // If we previously said "no" in THIS roll sequence, skip
+    if (wantAutomation === -1) {
+      return result;
+    }
+
+    // If this is a new roll with effects, ask the user
+    if (wantAutomation == 0) {
       const decision = await askForAutomatePermission();
       if (!decision) {
         wantAutomation = -1;
@@ -88,8 +106,6 @@ Hooks.once("init", async () => {
       } else {
         wantAutomation = 1;
       }
-    } else if (wantAutomation === -1 || newRollEffects.length === 0) {
-      return result;
     }
 
     rollEffects = rollEffects.concat(newRollEffects);
@@ -129,7 +145,25 @@ Hooks.once("init", async () => {
       result[2]
     );
 
-    if (newRollEffects?.length > 0 && wantAutomation == 0) {
+    // If there are no effects for this attribute, return original result
+    if (newRollEffects.length === 0) {
+      return result;
+    }
+
+    // If we haven't asked yet (wantAutomation == 0), this might be a new roll
+    // Reset from any previous -1 state since this is a fresh attempt
+    if (wantAutomation === -1 && rollEffects.length === 0) {
+      // Previous roll was cancelled and no effects accumulated yet - reset for new roll
+      resetAutomation();
+    }
+
+    // If we previously said "no" in THIS roll sequence, skip
+    if (wantAutomation === -1) {
+      return result;
+    }
+
+    // If this is a new roll with effects, ask the user
+    if (wantAutomation == 0) {
       const decision = await askForAutomatePermission();
       if (!decision) {
         wantAutomation = -1;
@@ -137,8 +171,6 @@ Hooks.once("init", async () => {
       } else {
         wantAutomation = 1;
       }
-    } else if (wantAutomation === -1 || newRollEffects.length === 0) {
-      return result;
     }
 
     rollEffects = rollEffects.concat(newRollEffects);
