@@ -1,4 +1,11 @@
 
+## [1.1.3](https://github.com/EddieDover/mothership-crew-achievements/compare/v1.1.2...v1.1.3) (2025-11-13)
+
+
+### Features
+
+* support non-compendium skills ([f651977](https://github.com/EddieDover/mothership-crew-achievements/commit/f651977a3a573887140a2423b5fb764bb399f7df)), closes [#7](https://github.com/EddieDover/mothership-crew-achievements/issues/7)
+
 ## [1.1.2](https://github.com/EddieDover/mothership-crew-achievements/compare/v1.1.1...v1.1.2) (2025-10-25)
 
 
