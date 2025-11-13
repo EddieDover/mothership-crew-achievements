@@ -127,6 +127,23 @@ export class AchievementSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
         }
       }
     }
+
+    const playerMadeSkills = game.data.items.filter(
+      (item) => item.type === "skill"
+    );
+    const hasPlayerMadeSkills = playerMadeSkills.length;
+
+    if (hasPlayerMadeSkills) {
+      for (const sk of playerMadeSkills) {
+        if (!this.v12SkillKeys.includes(sk.name)) {
+          this.v12SkillKeys.push(sk.name);
+          this.v12SkillValues.push({
+            value: sk.name,
+            label: sk.name,
+          });
+        }
+      }
+    }
     this.isDataLoaded = true;
   }
 
